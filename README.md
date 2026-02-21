@@ -98,7 +98,6 @@ S3 → raw_data → Upload `marketing_campaign.csv`
 AWS Glue → Data Catalog → Databases → Add Database
 Database Name: **etl-project-for-medium-database**
 
-![db](https://user-images.githubusercontent.com/63555029/228256298-65829739-c071-4207-814d-dfd569e0a74e.png)
 
 ---
 
@@ -110,13 +109,12 @@ IAM Role: **IAM-Role-etl-project**
 Target DB: **etl-project-for-medium-database**
 Schedule: On-demand
 
-![crawler](https://user-images.githubusercontent.com/63555029/228259725-eaa8a949-6345-4f20-bdc5-058e4676de8f.png)
 
 ---
 
 ## **3.3 Run the Crawler**
 
-![c1](https://user-images.githubusercontent.com/63555029/228256629-e504361a-a655-4072-a918-8442a7d3d11f.png)
+
 
 ---
 
@@ -140,7 +138,7 @@ Job Name: **etl-project-for-medium-job**
 IAM Role: **IAM-Role-etl-project**
 Kernel: Spark
 
-![job](https://user-images.githubusercontent.com/63555029/228258375-5680b1be-1b76-4eb6-b00e-bce0ed3b711f.png)
+
 
 ---
 
@@ -261,7 +259,7 @@ Service: Redshift
 Policy: AdministratorAccess
 Role Name: **IAM-Role-etl-project-redshift**
 
-![r1](https://user-images.githubusercontent.com/63555029/228977738-f61c5f3b-bc19-4c4d-9a50-869e305646f3.png)
+
 
 ---
 
@@ -272,13 +270,13 @@ Node Type: dc2.large
 Nodes: 1
 IAM Role: **IAM-Role-etl-project-redshift**
 
-![r2](https://user-images.githubusercontent.com/63555029/228977775-6261a957-da08-4041-9317-e84476210d5d.png)
+
 
 ---
 
 ## **6.3 Open Redshift Query Editor**
 
-![r3](https://user-images.githubusercontent.com/63555029/228977819-75df9364-b1da-47ad-a744-ead14f27b940.png)
+
 
 ---
 
