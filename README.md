@@ -1,7 +1,9 @@
-📦 etl-data-engineering-aws-pipeline
-End-to-End ETL Pipeline using AWS Glue, PySpark, Amazon S3 & Amazon Redshift
+📦 ETL Data Engineering on AWS — etl-data-engineering-aws-pipeline
+🚀 End-to-End ETL Pipeline using AWS Glue, PySpark, Amazon S3 & Amazon Redshift
 
-This repository demonstrates how to build a complete ETL (Extract–Transform–Load) Data Engineering Pipeline using:
+This repository showcases a complete, production-style ETL (Extract → Transform → Load) Data Engineering Pipeline leveraging modern AWS cloud services.
+
+🔧 Technologies Used
 
 Apache Spark (PySpark)
 
@@ -13,10 +15,15 @@ AWS Glue Data Catalog
 
 Amazon Redshift
 
-The project covers the full data workflow:
-Extract → Transform → Load → Query → Analyze
+🔄 Pipeline Workflow
 
-⚠️ CAUTION: AWS Glue & Redshift may incur costs. Delete jobs, crawlers, and clusters after testing.
+The project demonstrates the full data lifecycle:
+
+➡️ Extract → 🔁 Transform → 📤 Load → 🔍 Query → 📊 Analyze
+
+⚠️ Important Note
+Running AWS Glue, Redshift Clusters, and Crawlers may generate cost.
+Always delete Glue Jobs, Crawlers, and Redshift Clusters after testing.
 
 ---
 
