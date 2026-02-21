@@ -1,16 +1,17 @@
 # 🚀 ETL Data Engineering Pipeline on AWS
 
-This project demonstrates a complete **end-to-end ETL Data Engineering Pipeline**
+This project demonstrates a complete **End-to-End ETL Data Engineering Pipeline**
 built using **AWS Glue, PySpark, Amazon S3, Glue Data Catalog, and Amazon Redshift**.
 
-The goal of this project is to show how raw data is:
+The objective is to show how raw data is:
+
 **Extracted → Transformed → Loaded → Queried → Analyzed**  
 using a fully serverless and scalable cloud architecture.
 
 ---
 
 # 🏗️ Architecture Overview
-(Replace this with your actual screenshot)
+(Replace this placeholder with your actual architecture image)
 
 ![architecture](screenshots/architecture.png)
 
@@ -33,7 +34,7 @@ etl-data-engineering-aws-pipeline/
 │ ├── architecture.png
 │ ├── extract.png
 │ ├── transform.png
-│ ├── load.png
+│ └── load.png
 │
 │── README.md
 │── .gitignore
@@ -48,7 +49,7 @@ etl-data-engineering-aws-pipeline/
 ---
 
 # 🟧 PART 1 — EXTRACT  
-_Load Raw Data into AWS S3_
+### _Load Raw Data into Amazon S3_
 
 ![extract](screenshots/extract.png)
 
@@ -56,11 +57,13 @@ _Load Raw Data into AWS S3_
 
 ## ✔ 1. Create IAM Role for AWS Glue
 
-AWS Console → IAM → Roles → Create Role  
-Service: **Glue**  
-Permissions: **AdministratorAccess**
+Navigate to:  
+**AWS Console → IAM → Roles → Create Role**
 
-**Role Name:**
+- Service: **Glue**  
+- Permissions: **AdministratorAccess**
+
+**Role Name:**  
 
 IAM-Role-etl-project
 
@@ -69,12 +72,12 @@ IAM-Role-etl-project
 
 ## ✔ 2. Create S3 Bucket & Folders
 
-Bucket Name:
+**Bucket Name:**  
 
 etl-project-for-medium
 
 
-Inside folder structure:
+**Folder Structure:**
 
 etl-project-for-medium-database/
 ├── raw_data/
@@ -88,29 +91,26 @@ marketing_campaign.csv
 
 ---
 
-## ✔ 3. Create Glue Database & Table (using Crawler)
+## ✔ 3. Create Glue Database & Table (via Crawler)
 
-### 3.1 Create Database
+### 3.1 Create Database  
 AWS Glue → Data Catalog → Databases → Add Database  
 
 etl-project-for-medium-database
 
 
-### 3.2 Create Glue Crawler
-Crawler Name:
-
-etl-project-for-medium-crawler
-
-Source: raw_data folder  
-IAM Role: `IAM-Role-etl-project`  
-Target DB: `etl-project-for-medium-database`
+### 3.2 Create Glue Crawler  
+- Name: `etl-project-for-medium-crawler`  
+- Source: raw_data folder  
+- IAM Role: `IAM-Role-etl-project`  
+- Target DB: `etl-project-for-medium-database`
 
 Run crawler → table created.
 
 ---
 
 # 🟦 PART 2 — TRANSFORM  
-_Transform data using PySpark on AWS Glue_
+### _Transform Raw Data Using PySpark in AWS Glue_
 
 ![transform](screenshots/transform.png)
 
@@ -118,19 +118,19 @@ _Transform data using PySpark on AWS Glue_
 
 ## ✔ 4. Create AWS Glue Interactive Notebook
 
-Job Name:
+**Job Name:**  
 
 etl-project-for-medium-job
 
 
-IAM Role: `IAM-Role-etl-project`  
-Kernel: Spark  
-Workers: 5  
-Worker Type: G.1X
+- IAM Role: `IAM-Role-etl-project`
+- Kernel: Spark  
+- Worker Type: **G.1X**  
+- Workers: **5**
 
 ---
 
-# 🧪 5. PySpark Code (No Changes Done)
+# 🧪 5. PySpark Code (Original — No Changes)
 
 ## ▶ 5.1 Initialize Session
 ```python
@@ -164,7 +164,7 @@ df = df["id","year_birth","education","marital_status","income","dt_customer"]
 df.show()
 ▶ 5.5 Check NULL Values
 from pyspark.sql.functions import *
-df.select([count(when(col(c).isNull(),c)).alias(c) for c in df.columns]).show()
+df.select([count(when(col(c).isNull(), c)).alias(c) for c in df.columns]).show()
 ▶ 5.6 Fill NULL Income with Mean
 mean_value = df.select(mean(col('income'))).collect()[0][0]
 df = df.fillna(mean_value, subset=['income'])
@@ -181,17 +181,18 @@ df.write \
  .mode("append") \
  .save("s3://etl-project-for-medium/etl-project-for-medium-database/transformed_data/")
 🟩 PART 3 — LOAD
-
-Load transformed data into Amazon Redshift
+Load Transformed Data Into Amazon Redshift
 
 ✔ 6. Create IAM Role for Redshift
-
-Service: Redshift
-Permission: AdministratorAccess
 
 Role Name:
 
 IAM-Role-etl-project-redshift
+
+Service: Redshift
+
+Permissions: AdministratorAccess
+
 ✔ 7. Create Amazon Redshift Cluster
 
 Cluster ID:
@@ -199,7 +200,9 @@ Cluster ID:
 etl-project-cluster
 
 Node type: dc2.large
+
 Nodes: 1
+
 Attach IAM Role: IAM-Role-etl-project-redshift
 
 🟥 7 — Load Data into Redshift
