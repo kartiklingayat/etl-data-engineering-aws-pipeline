@@ -59,7 +59,6 @@ Role Name: **IAM-Role-etl-project**
 AWS S3 → Create Bucket
 Bucket Name: **etl-project-for-medium**
 
-![s3\_bucket](https://user-images.githubusercontent.com/63555029/228254010-97443b14-b3d3-460c-b71f-e989b9c0d8d0.png)
 
 ---
 
@@ -68,7 +67,8 @@ Bucket Name: **etl-project-for-medium**
 AWS S3 → `etl-project-for-medium` → Create Folder
 Folder Name: **etl-project-for-medium-database**
 
-![folder](https://user-images.githubusercontent.com/63555029/228255263-cfd3e59b-70dc-402e-9e00-19900116e586.png)
+<img width="1607" height="408" alt="228256298-65829739-c071-4207-814d-dfd569e0a74e" src="https://github.com/user-attachments/assets/b508fd13-a049-4095-ae63-83b30fc934bd" />
+
 
 ---
 
@@ -79,7 +79,8 @@ Inside `etl-project-for-medium-database/` create:
 * raw_data
 * transformed_data
 
-![folder2](https://user-images.githubusercontent.com/63555029/228255709-5f5314ac-807b-4273-8158-67033dbcbe46.png)
+<img width="1543" height="161" alt="228255709-5f5314ac-807b-4273-8158-67033dbcbe46" src="https://github.com/user-attachments/assets/592d39b1-cbba-4f10-a882-750cb77bc632" />
+
 
 ---
 
@@ -87,7 +88,8 @@ Inside `etl-project-for-medium-database/` create:
 
 S3 → raw_data → Upload `marketing_campaign.csv`
 
-![upload](https://user-images.githubusercontent.com/63555029/228255897-2cffbb16-4c32-4cf8-a0c8-65a907f563b9.png)
+<img width="1491" height="155" alt="228255897-2cffbb16-4c32-4cf8-a0c8-65a907f563b9" src="https://github.com/user-attachments/assets/78288ec9-2f72-43ae-899f-c2c92030124e" />
+
 
 ---
 
@@ -120,7 +122,8 @@ Schedule: On-demand
 
 ## **3.4 Table & Schema Created Successfully**
 
-![c2](https://user-images.githubusercontent.com/63555029/228256846-6b620a1a-33ac-4edf-8276-d0a6b6faf950.png)
+<img width="1250" height="777" alt="228256846-6b620a1a-33ac-4edf-8276-d0a6b6faf950" src="https://github.com/user-attachments/assets/0813b1a8-de0e-47fb-b6cb-a3be8397197c" />
+
 
 ---
 
@@ -296,7 +299,8 @@ CREATE TABLE etl_project_transformed_data_table(
 ) ENCODE AUTO;
 ```
 
-![sql\_create](https://user-images.githubusercontent.com/63555029/228978528-c2c266b4-1183-453d-a213-1a2fa31dddd5.png)
+<img width="1578" height="724" alt="228978528-c2c266b4-1183-453d-a213-1a2fa31dddd5" src="https://github.com/user-attachments/assets/7a315c92-4b42-4014-b790-0cabab1690a0" />
+
 
 ---
 
@@ -318,7 +322,8 @@ DELIMITER ',';
 SELECT * FROM etl_project_transformed_data_table;
 ```
 
-![sql\_output](https://user-images.githubusercontent.com/63555029/228979014-87d30860-754e-4e6e-937a-029d326324e2.png)
+<img width="1630" height="750" alt="228979014-87d30860-754e-4e6e-937a-029d326324e2" src="https://github.com/user-attachments/assets/376ca2d7-41e2-4550-864b-54f0866b260a" />
+
 
 ---
 
