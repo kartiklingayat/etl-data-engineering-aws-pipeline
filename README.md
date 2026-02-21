@@ -49,7 +49,8 @@ Service: **Glue**
 Policy: **AdministratorAccess**
 Role Name: **IAM-Role-etl-project**
 
-![extra](https://user-images.githubusercontent.com/63555029/228253564-6e65992a-1c0c-4f53-be04-aabec063a6f1.png)
+<img width="1296" height="129" alt="228253564-6e65992a-1c0c-4f53-be04-aabec063a6f1" src="https://github.com/user-attachments/assets/92bf7db7-722f-466f-b272-d0ffe8cda5a7" />
+
 
 ---
 
@@ -333,17 +334,3 @@ GROUP BY education;
 
 ---
 
-# 🎉 **Project Completed**
-
-Thank you for following this ETL project.
-This covers the complete workflow from **Extract → Transform → Load → Query → Analyze** on AWS.
-
----
-
-# ⭐ **If this helped you, please star the repo!**
-
----
-
-## भाऊ, हे READY आहे — direct GitHub मध्ये paste कर.
-
-काही हवं असेल तर मला सांग, मी लगेच तयार करून देतो.
