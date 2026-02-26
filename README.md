@@ -67,7 +67,6 @@ Bucket Name: **etl-project-for-medium**
 AWS S3 → `etl-project-for-medium` → Create Folder
 Folder Name: **etl-project-for-medium-database**
 
-<img width="1607" height="408" alt="228256298-65829739-c071-4207-814d-dfd569e0a74e" src="https://github.com/user-attachments/assets/b508fd13-a049-4095-ae63-83b30fc934bd" />
 
 
 ---
@@ -243,7 +242,7 @@ df.write \
 
 ## **5.9 Check Transformed Bucket**
 
-![transformed](https://user-images.githubusercontent.com/63555029/228259450-80d283e1-a6b2-406a-b150-b15dbec04de2.png)
+
 
 ---
 
